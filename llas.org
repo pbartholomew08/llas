@@ -1,0 +1,9 @@
+#+TITLE: LLAS: Lisp Linear Algebra System
+#+SUBTITLE: Version 0.0
+
+#+LATEX_HEADER: \usepackage{fullpage}
+#+LATEX_HEADER: \hypersetup{colorlinks}
+
+* Introduction
+
+=LLAS= is an implementation of =BLAS= in Common Lisp.
