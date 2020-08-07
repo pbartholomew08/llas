@@ -1,0 +1,5 @@
+#+TITLE: LLAS
+
+* About
+
+=LLAS=, the Lisp Linear Algebra System is an implementation of =BLAS= in Common Lisp.
