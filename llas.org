@@ -6,7 +6,16 @@
 
 * Introduction
 
-=LLAS= is an implementation of =BLAS= in Common Lisp.
+The Lisp Linear Algebra System =LLAS= is an implementation of =BLAS= in Common Lisp.
+It is intended to investigate literate programming and the use of Common Lisp for numerical
+software.
+
+** Literate programming
+
+This document is both the documentation for, and the source code of, =LLAS=.
+The source code blocks embedded in this document are "tangled" to generate the source files, some of
+them contain =noweb= references such as ~<<src:llas.asd-package>>~ this indicates that the named source
+block should be inserted in its place when tangling.
 
 * Building
 
@@ -16,19 +25,34 @@ listing\nbsp[[src:llas.asd]].
 To build and/or load =LLAS= ensure the source is in the path searched by =asdf= and evaluate
 ~(asdf:load-system :llas)~.
 
-#+CAPTION: The =llas.asd= file
+#+CAPTION: The =llas.asd= file.
 #+NAME: src:llas.asd
-#+BEGIN_SRC lisp :tangle llas.asd
+#+BEGIN_SRC lisp :tangle llas.asd :noweb no-export
   ;;;; llas.asd
   ;;
   ;;; Code
   ;;
 
+  <<src:llas.asd-package>>
+
+  <<src:llas.asd-system>>
+#+END_SRC
+
+Following the =asdf= documentation, the ~llas~ package is first defined and activated in
+listing\nbsp[[src:llas.asd-package]] after which the ~llas~ system is defined in listing\nbsp[[src:llas.asd-system]].
+
+#+CAPTION: Defining and activating the ~llas~ system package.
+#+NAME: src:llas.asd-package
+#+BEGIN_SRC lisp
   (defpackage #:llas
     (:use :cl
           :asdf))
   (in-package :llas)
+#+END_SRC
 
+#+CAPTION: Defining the ~llas~ system.
+#+NAME: src:llas.asd-system
+#+BEGIN_SRC lisp
   (defsystem "llas"
     :name "llas"
     :version "0.0"
@@ -36,8 +60,8 @@ To build and/or load =LLAS= ensure the source is in the path searched by =asdf= 
     :licence "Apache 2.0")
 #+END_SRC
 
-*** Components
+** Components
 
-*** Dependencies
+** Dependencies
 
-*** Test systems
+** Test systems
