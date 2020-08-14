@@ -17,6 +17,10 @@ The source code blocks embedded in this document are "tangled" to generate the s
 them contain =noweb= references such as ~<<src:llas.asd-package>>~ this indicates that the named source
 block should be inserted in its place when tangling.
 
+* Level 1
+
+The =BLAS= level 1 procedures operate on vectors, for instance computing dot products.
+
 * Building
 
 =LLAS= uses the =asdf= system definition facility for building and loading.
