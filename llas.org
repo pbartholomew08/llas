@@ -7,3 +7,37 @@
 * Introduction
 
 =LLAS= is an implementation of =BLAS= in Common Lisp.
+
+* Building
+
+=LLAS= uses the =asdf= system definition facility for building and loading.
+The structure of the system and how it should be built is described the file =llas.asd= shown in
+listing\nbsp[[src:llas.asd]]. 
+To build and/or load =LLAS= ensure the source is in the path searched by =asdf= and evaluate
+~(asdf:load-system :llas)~.
+
+#+CAPTION: The =llas.asd= file
+#+NAME: src:llas.asd
+#+BEGIN_SRC lisp :tangle llas.asd
+  ;;;; llas.asd
+  ;;
+  ;;; Code
+  ;;
+
+  (defpackage #:llas
+    (:use :cl
+          :asdf))
+  (in-package :llas)
+
+  (defsystem "llas"
+    :name "llas"
+    :version "0.0"
+    :author "Paul Bartholomew"
+    :licence "Apache 2.0")
+#+END_SRC
+
+*** Components
+
+*** Dependencies
+
+*** Test systems

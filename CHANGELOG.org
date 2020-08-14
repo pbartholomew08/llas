@@ -2,5 +2,6 @@
 
 * Current
 
+- [2020-08-14] Outlining =llas.asd= file
 - [2020-08-07] Adding main file =llas.org=
 - [2020-08-07] Started development
