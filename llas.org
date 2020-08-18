@@ -21,6 +21,125 @@ block should be inserted in its place when tangling.
 
 The =BLAS= level 1 procedures operate on vectors, for instance computing dot products.
 
+** Dot product
+
+*** Real numbers
+
+\begin{equation}
+  w = \boldsymbol{x} \cdot \boldsymbol{y} = \sum^N_{i=1} x_i y_i
+\end{equation}
+
+*** Complex numbers
+
+**** Conjugated dot product
+
+\begin{equation}
+  w = \bar{\boldsymbol{x}} \cdot \boldsymbol{y} = \sum^N_{i=1} \bar{x_i} y_i
+\end{equation}
+where $\bar{x}$ is the complex conjugate of $x$.
+
+**** Unconjugated dot product
+
+\begin{equation}
+  w = \boldsymbol{x} \cdot \boldsymbol{y} = \sum^N_{i=1} x_i y_i
+\end{equation}
+
+** AXPY
+
+\begin{equation}
+  \boldsymbol{w} = \alpha \boldsymbol{x} + \boldsymbol{y}
+\end{equation}
+
+** Construct a Givens rotation
+
+Compute $c, s, r$ to satisfy
+\begin{equation}
+  \begin{bmatrix}
+     c & s \\
+    -s & c
+  \end{bmatrix} \cdot
+  \begin{pmatrix}
+    a \\
+    b
+  \end{pmatrix} =
+  \begin{pmatrix}
+    r \\
+    0
+  \end{pmatrix}
+\end{equation}
+
+** Apply a Givens rotation
+
+Set
+\begin{equation}
+  \begin{pmatrix}
+    x_i \\
+    y_i
+  \end{pmatrix} \rightarrow
+  \begin{bmatrix}
+     c & s \\
+    -s & c
+  \end{bmatrix} \cdot
+  \begin{pmatrix}
+    x_i \\
+    y_i
+  \end{pmatrix} \ \forall \ i \in \left[ 1, N \right]
+\end{equation}
+
+** Construct a modified Givens rotation
+
+** Apply a modified Givens rotation
+
+** Copy a vector
+
+\begin{equation}
+  \boldsymbol{y} = \boldsymbol{x}
+\end{equation}
+
+** Swap two vectors
+
+\begin{equation}
+  \boldsymbol{y} \leftrightarrow \boldsymbol{x}
+\end{equation}
+
+** Compute the $L_2$ norm of a vector
+
+\begin{equation}
+  w = \left| \boldsymbol{x} \right|_2 = \sqrt{\sum^N_{i=1} \left| x_i \right|^2} 
+\end{equation}
+
+** Sum the magnitudes of a vector's components
+
+*** Real numbers
+
+\begin{equation}
+  w = \sum^N_{i=1} \left| x_i \right|
+\end{equation}
+
+*** Complex numbers
+
+\begin{equation}
+  w = \sum^N_{i=1} \left( \left| Re\left(x_i\right) \right| + \left| Im\left(x_i\right) \right|
+  \right)
+\end{equation}
+
+** Scale a vector
+
+\begin{equation}
+  \boldsymbol{x} \leftarrow \alpha \boldsymbol{x}
+\end{equation}
+
+** Find the largest component of a vector
+
+*** Real numbers
+
+Find $i$ such that $\left| x_i \right| = max\left( \left|x_{j}\right| \forall j \in \left[1, N\right] \right)$
+
+*** Complex numbers
+
+Find $i$ such that $\left| x_i \right| = max\left( \left|Re\left(x_{j}\right)\right| +
+\left|Im\left(x_{j}\right)\right| \forall j \in \left[1, N\right] \right)$
+
 * Building
 
 =LLAS= uses the =asdf= system definition facility for building and loading.
